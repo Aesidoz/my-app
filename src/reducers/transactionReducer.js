@@ -1,4 +1,5 @@
 export const FETCH_TRANSACTION = "FETCH_TRANSACTION";
+export const CREATE_TRANSACTION = "CREATE_TRANSACTION";
 export const DELETE_TRANSACTION = "DELETE_TRANSACTION";
 
 export function transactionReducer(state, action) {
@@ -8,6 +9,9 @@ export function transactionReducer(state, action) {
 
       return action.value.transactions;
     }
+    // case CREATE_TRANSACTION: {
+    //   //dispatch({type:CREATE_TRANSACTION,value: {transaction: newTransaction}})
+    // }
     case DELETE_TRANSACTION: {
       const idx = state.findIndex((el) => el.id === action.value.id);
       if (idx !== -1) {
